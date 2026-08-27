@@ -1,0 +1,14 @@
+{
+  "name": "shopcart",
+  "version": "1.0.0",
+  "description": "Shopcart - Full-Stack E-Commerce Platform",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "seed": "cd backend && npm run seed",
+    "start:backend": "cd backend && npm start"
+  }
+}
