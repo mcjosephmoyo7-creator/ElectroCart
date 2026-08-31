@@ -58,7 +58,7 @@ export const createCheckoutSession = asyncHandler(async (req: Request, res: Resp
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    line_items: order.items.map((item) => ({
+    line_items: order.items.map((item: any) => ({
       price_data: {
         currency: 'usd',
         product_data: { name: item.name },

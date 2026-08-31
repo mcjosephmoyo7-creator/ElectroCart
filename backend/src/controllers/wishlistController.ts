@@ -54,7 +54,7 @@ export const removeFromWishlist = asyncHandler(async (req: Request, res: Respons
   }
 
   wishlist.products = wishlist.products.filter(
-    (p) => p.toString() !== productId
+    (p: any) => p.toString() !== productId
   );
   await wishlist.save();
 
@@ -71,7 +71,7 @@ export const isInWishlist = asyncHandler(async (req: Request, res: Response) => 
 
   const wishlist = await Wishlist.findOne({ user: req.user._id });
   const inWishlist = wishlist
-    ? wishlist.products.some((p) => p.toString() === productId)
+    ? wishlist.products.some((p: any) => p.toString() === productId)
     : false;
 
   res.json({ success: true, data: { inWishlist } });

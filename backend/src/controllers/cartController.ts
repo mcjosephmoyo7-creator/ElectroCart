@@ -32,7 +32,7 @@ export const addToCart = asyncHandler(async (req: Request, res: Response) => {
     });
   } else {
     const existingItem = cart.items.find(
-      (item) => item.product.toString() === productId
+      (item: any) => item.product.toString() === productId
     );
 
     if (existingItem) {
@@ -65,7 +65,7 @@ export const updateCartItem = asyncHandler(async (req: Request, res: Response) =
     throw new AppError('Cart not found', 404);
   }
 
-  const item = cart.items.find((i) => i.product.toString() === productId);
+  const item = cart.items.find((i: any) => i.product.toString() === productId);
   if (!item) {
     throw new AppError('Item not found in cart', 404);
   }
@@ -89,7 +89,7 @@ export const removeFromCart = asyncHandler(async (req: Request, res: Response) =
     throw new AppError('Cart not found', 404);
   }
 
-  cart.items = cart.items.filter((i) => i.product.toString() !== productId);
+  cart.items = cart.items.filter((i: any) => i.product.toString() !== productId);
   await cart.save();
 
   const populated = await cart.populate(

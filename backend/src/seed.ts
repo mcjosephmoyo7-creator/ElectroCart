@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import mongoose from 'mongoose';
+import connectDB from './config/db.js';
 import User from './models/User.js';
 import Category from './models/Category.js';
 import Product from './models/Product.js';
@@ -485,7 +485,7 @@ const reviews = [
 
 const seed = async () => {
   try {
-    await mongoose.connect(process.env.DATABASE_URI!);
+    await connectDB();
     console.log('Connected to MongoDB');
 
     console.log('Clearing existing data...');
@@ -573,12 +573,10 @@ const seed = async () => {
     console.log(`  Products: ${createdProducts.length}`);
     console.log(`  Reviews: ${reviews.length}`);
 
-    await mongoose.disconnect();
     console.log('Disconnected from MongoDB');
     process.exit(0);
   } catch (error) {
     console.error('Seed error:', error);
-    await mongoose.disconnect();
     process.exit(1);
   }
 };
