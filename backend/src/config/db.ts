@@ -3,7 +3,7 @@ import { Db, MongoClient } from 'mongodb';
 let database: Db;
 
 const connectDB = async (): Promise<void> => {
-  const uri = process.env.DATABASE_URI;
+  const uri = process.env.DATABASE_URI || process.env.MONGODB_URI;
   if (!uri) throw new Error('DATABASE_URI is not configured');
 
   const client = new MongoClient(uri);

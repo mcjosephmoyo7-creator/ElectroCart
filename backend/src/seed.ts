@@ -499,10 +499,10 @@ const seed = async () => {
     console.log('Creating users...');
     const admin = await User.create({
       username: 'admin',
-      email: 'admin@shopcart.com',
-      password: 'Admin123!',
+      email: 'mcjosephmoyo7@gmail.com',
+      password: 'MCJOSEPHMOYO12345',
       role: 'admin',
-      phone: '+1-555-0100',
+      phone: '+260-555-0100',
     });
 
     const customer = await User.create({
@@ -568,7 +568,7 @@ const seed = async () => {
     }
 
     console.log('\nSeed completed successfully!');
-    console.log(`  Users: 2 (admin@shopcart.com / Admin123!, customer@example.com / Customer123!)`);
+    console.log(`  Users: 2 (mcjosephmoyo7@gmail.com / MCJOSEPHMOYO12345 (owner), customer@example.com / Customer123!)`);
     console.log(`  Categories: ${createdCategories.length}`);
     console.log(`  Products: ${createdProducts.length}`);
     console.log(`  Reviews: ${reviews.length}`);

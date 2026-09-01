@@ -1,4 +1,4 @@
-# ShopCart — Full-Stack E-Commerce Platform
+# ElectroCart — Full-Stack E-Commerce Platform
 
 > **Shopcart.reactbd.com clone** — a pixel-perfect, fully interactive online store for electronics, kitchen
 > appliances, televisions, refrigerators, washing machines, tablets and gadget accessories.
@@ -9,7 +9,7 @@
 
 ```
 ShopCart/
-├── frontend/   # ShopCart storefront — self-contained Next.js app (recommended)
+├── frontend/   # ElectroCart storefront — self-contained Next.js app (recommended)
 └── backend/    # Optional Express + MongoDB API (legacy, kept for reference)
 ```
 
