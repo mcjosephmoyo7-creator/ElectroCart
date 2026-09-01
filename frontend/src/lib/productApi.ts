@@ -56,6 +56,193 @@ export interface ProductListResult {
   total: number;
 }
 
+const currentProducts: Product[] = [
+  {
+    _id: '2026001',
+    name: 'Samsung Galaxy S26 Ultra',
+    slug: '2026001-samsung-galaxy-s26-ultra',
+    description: 'Flagship 2026 Android smartphone with a pro-grade camera system, bright adaptive display and all-day battery life.',
+    price: 1299.99,
+    categorySlug: 'smartphones',
+    category: 'smartphones',
+    brand: 'Samsung',
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.8,
+    numReviews: 124,
+    stock: 18,
+    sold: 86,
+    isFeatured: true,
+    isNew: true,
+    onSale: false,
+    tags: ['smartphone', 'android', '5g', '2026'],
+    createdAt: '2026-02-11T00:00:00.000Z',
+  },
+  {
+    _id: '2026002',
+    name: 'Apple iPhone 17 Pro',
+    slug: '2026002-apple-iphone-17-pro',
+    description: 'Premium 2026 smartphone with a pro camera system, titanium design and fast performance for demanding everyday use.',
+    price: 1199.99,
+    categorySlug: 'smartphones',
+    category: 'smartphones',
+    brand: 'Apple',
+    image: 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.9,
+    numReviews: 176,
+    stock: 24,
+    sold: 112,
+    isFeatured: true,
+    isNew: true,
+    onSale: false,
+    tags: ['smartphone', 'ios', '5g', '2026'],
+    createdAt: '2026-09-01T00:00:00.000Z',
+  },
+  {
+    _id: '2026003',
+    name: 'Apple MacBook Air M5 15-inch',
+    slug: '2026003-apple-macbook-air-m5-15-inch',
+    description: 'Thin 2026 laptop with Apple silicon performance, a bright 15-inch display and quiet all-day productivity.',
+    price: 1299.99,
+    categorySlug: 'laptops',
+    category: 'laptops',
+    brand: 'Apple',
+    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.8,
+    numReviews: 98,
+    stock: 16,
+    sold: 74,
+    isFeatured: true,
+    isNew: true,
+    onSale: false,
+    tags: ['laptop', 'apple', 'productivity', '2026'],
+    createdAt: '2026-03-18T00:00:00.000Z',
+  },
+  {
+    _id: '2026004',
+    name: 'Sony WF-1000XM6 Noise-Cancelling Earbuds',
+    slug: '2026004-sony-wf-1000xm6-noise-cancelling-earbuds',
+    description: '2026 flagship true wireless earbuds with adaptive noise cancellation, clear calls and a compact charging case.',
+    price: 299.99,
+    discountPrice: 269.99,
+    categorySlug: 'mobile-accessories',
+    category: 'mobile accessories',
+    brand: 'Sony',
+    image: 'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.7,
+    numReviews: 63,
+    stock: 42,
+    sold: 91,
+    isFeatured: true,
+    isNew: true,
+    onSale: true,
+    tags: ['earbuds', 'wireless', 'noise-cancelling', '2026'],
+    createdAt: '2026-04-08T00:00:00.000Z',
+  },
+  {
+    _id: '2026005',
+    name: 'Samsung Galaxy Watch 8 Classic',
+    slug: '2026005-samsung-galaxy-watch-8-classic',
+    description: 'Modern 2026 smartwatch with health tracking, sleep insights, GPS and a durable rotating-bezel design.',
+    price: 399.99,
+    categorySlug: 'mens-watches',
+    category: 'mens watches',
+    brand: 'Samsung',
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.6,
+    numReviews: 51,
+    stock: 33,
+    sold: 68,
+    isFeatured: false,
+    isNew: true,
+    onSale: false,
+    tags: ['smartwatch', 'fitness', 'wearable', '2026'],
+    createdAt: '2026-07-21T00:00:00.000Z',
+  },
+  {
+    _id: '2026006',
+    name: 'Ninja Foodi Smart Air Fryer Pro',
+    slug: '2026006-ninja-foodi-smart-air-fryer-pro',
+    description: 'Connected 2026 air fryer with dual-zone cooking, smart temperature control and generous family-sized capacity.',
+    price: 249.99,
+    discountPrice: 219.99,
+    categorySlug: 'kitchen-appliances',
+    category: 'kitchen appliances',
+    brand: 'Ninja',
+    image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.7,
+    numReviews: 47,
+    stock: 29,
+    sold: 57,
+    isFeatured: true,
+    isNew: true,
+    onSale: true,
+    tags: ['air-fryer', 'smart-kitchen', '2026'],
+    createdAt: '2026-01-26T00:00:00.000Z',
+  },
+  {
+    _id: '2026007',
+    name: 'Samsung Neo QLED 4K Smart TV 65-inch',
+    slug: '2026007-samsung-neo-qled-4k-smart-tv-65-inch',
+    description: '2026 65-inch 4K smart TV with quantum mini-LED contrast, smooth motion and a built-in streaming platform.',
+    price: 1599.99,
+    discountPrice: 1399.99,
+    categorySlug: 'television',
+    category: 'television',
+    brand: 'Samsung',
+    image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.8,
+    numReviews: 39,
+    stock: 12,
+    sold: 44,
+    isFeatured: true,
+    isNew: true,
+    onSale: true,
+    tags: ['television', '4k', 'qled', 'smart-tv', '2026'],
+    createdAt: '2026-02-20T00:00:00.000Z',
+  },
+  {
+    _id: '2026008',
+    name: 'LG InstaView AI French Door Refrigerator',
+    slug: '2026008-lg-instaview-ai-french-door-refrigerator',
+    description: 'Large 2026 French-door refrigerator with a glass-view panel, flexible storage and AI-assisted cooling control.',
+    price: 2299.99,
+    categorySlug: 'refrigerators',
+    category: 'refrigerators',
+    brand: 'LG',
+    image: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.6,
+    numReviews: 28,
+    stock: 9,
+    sold: 26,
+    isFeatured: true,
+    isNew: true,
+    onSale: false,
+    tags: ['refrigerator', 'french-door', 'smart-home', '2026'],
+    createdAt: '2026-03-14T00:00:00.000Z',
+  },
+  {
+    _id: '2026009',
+    name: 'Samsung Bespoke AI Front Load Washer',
+    slug: '2026009-samsung-bespoke-ai-front-load-washer',
+    description: '2026 front-load washing machine with AI cycle selection, steam care, low-noise operation and app control.',
+    price: 999.99,
+    discountPrice: 899.99,
+    categorySlug: 'washing-machine',
+    category: 'washing machine',
+    brand: 'Samsung',
+    image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&h=800&q=85',
+    rating: 4.7,
+    numReviews: 34,
+    stock: 14,
+    sold: 31,
+    isFeatured: true,
+    isNew: true,
+    onSale: true,
+    tags: ['washing-machine', 'front-load', 'ai', '2026'],
+    createdAt: '2026-04-22T00:00:00.000Z',
+  },
+];
+
 const slugify = (value: string): string =>
   value
     .toLowerCase()
@@ -70,6 +257,15 @@ export function toProductSlug(p: { id: number | string; title: string }): string
 export function getProductIdFromSlug(slug: string): string | null {
   const match = slug.match(/^(\d+)/);
   return match ? match[1] : null;
+}
+
+function matchesLocalProduct(product: Product, query: ProductQuery): boolean {
+  if (query.categories?.length && !query.categories.includes(product.categorySlug)) return false;
+  if (!query.search) return true;
+  const haystack = [product.name, product.description, product.brand, product.category, ...product.tags]
+    .join(' ')
+    .toLowerCase();
+  return haystack.includes(query.search.toLowerCase());
 }
 
 const pseudoSold = (id: number): number => ((id * 2654435761) % 997) + 1;
@@ -194,7 +390,10 @@ export async function getElectronicsProducts(query: ProductQuery = {}): Promise<
     return true;
   });
 
-  const products = items.map(mapProduct);
+  const products = [
+    ...items.map(mapProduct),
+    ...currentProducts.filter((product) => matchesLocalProduct(product, query)),
+  ];
 
   switch (query.sort) {
     case 'price-asc':
@@ -217,6 +416,9 @@ export async function getElectronicsProducts(query: ProductQuery = {}): Promise<
 }
 
 export async function getProductById(id: string, signal?: AbortSignal): Promise<Product | null> {
+  const localProduct = currentProducts.find((product) => product._id === id);
+  if (localProduct) return localProduct;
+
   const url = `${PRODUCTS_API}/products/${encodeURIComponent(id)}`;
   try {
     const res = await fetch(url, { signal, cache: 'no-store' });

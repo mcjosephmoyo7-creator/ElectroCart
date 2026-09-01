@@ -14,7 +14,7 @@ interface Slide {
   href: string;
   gradient: string;
   icon: React.ReactNode;
-  imageSeed: string;
+  imageUrl: string;
   productLabel: string;
 }
 
@@ -29,7 +29,7 @@ const slides: Slide[] = [
     href: '/shop',
     gradient: 'from-navy-300 via-primary-800 to-primary',
     icon: <HiOutlineSparkles className="w-7 h-7" />,
-    imageSeed: 'shopcart-hero-tv',
+    imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: 'Smart TV',
   },
   {
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     href: '/shop',
     gradient: 'from-navy-300 via-navy to-accent-dark',
     icon: <HiOutlineTruck className="w-7 h-7" />,
-    imageSeed: 'shopcart-hero-shipping',
+    imageUrl: 'https://images.unsplash.com/photo-1586528116493-da8b8f7f0b1d?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: 'Free Delivery',
   },
   {
@@ -55,7 +55,7 @@ const slides: Slide[] = [
     href: '/shop',
     gradient: 'from-navy-300 via-primary-900 to-primary-dark',
     icon: <HiOutlineShieldCheck className="w-7 h-7" />,
-    imageSeed: 'shopcart-hero-guarantee',
+    imageUrl: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: '30-Day Guarantee',
   },
 ];
@@ -94,7 +94,7 @@ export default function HeroCarousel() {
                 <div className="relative w-80 h-80">
                   <div className="absolute inset-0 bg-white/10 rounded-full blur-md" />
                   <img
-                    src={`https://picsum.photos/seed/${slide.imageSeed}/480/480`}
+                    src={slide.imageUrl}
                     alt={slide.productLabel}
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white/20 rotate-3 hover:rotate-0 transition-transform duration-500"
                   />

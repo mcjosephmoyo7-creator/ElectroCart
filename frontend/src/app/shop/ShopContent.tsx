@@ -27,7 +27,7 @@ const sortOptions: { key: SortKey; label: string }[] = [
   { key: 'popular', label: 'Most Popular' },
 ];
 
-const MAX_PRICE = 1500;
+const MAX_PRICE = 2500;
 
 export default function ShopContent({ initialSearch = '', initialCategory = '', initialBrand = '' }: ShopContentProps) {
   const [search, setSearch] = useState(initialSearch);

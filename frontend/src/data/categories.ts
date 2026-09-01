@@ -17,7 +17,7 @@ export const categories: Category[] = [
     slug: 'kitchen-appliances',
     icon: FaUtensils,
     pastel: '#FEE2E2',
-    count: 6,
+    count: 7,
   },
   {
     _id: 'cat-tv',
@@ -25,7 +25,7 @@ export const categories: Category[] = [
     slug: 'television',
     icon: FaTv,
     pastel: '#FCE7F3',
-    count: 5,
+    count: 6,
   },
   {
     _id: 'cat-fridge',
@@ -33,7 +33,7 @@ export const categories: Category[] = [
     slug: 'refrigerators',
     icon: FaSnowflake,
     pastel: '#E0F2FE',
-    count: 4,
+    count: 5,
   },
   {
     _id: 'cat-washing',
@@ -41,7 +41,7 @@ export const categories: Category[] = [
     slug: 'washing-machine',
     icon: FaTshirt,
     pastel: '#DCFCE7',
-    count: 4,
+    count: 5,
   },
   {
     _id: 'cat-tablets',
