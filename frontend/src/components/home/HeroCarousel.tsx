@@ -55,7 +55,7 @@ const slides: Slide[] = [
     href: '/shop',
     gradient: 'from-navy-300 via-primary-900 to-primary-dark',
     icon: <HiOutlineShieldCheck className="w-7 h-7" />,
-    imageUrl: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=480&h=480&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: '30-Day Guarantee',
   },
 ];
