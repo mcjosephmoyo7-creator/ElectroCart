@@ -1,47 +1,29 @@
 import type { IconType } from 'react-icons';
-import { FaHeadphones, FaUtensils, FaTv, FaSnowflake, FaTshirt, FaTabletAlt } from 'react-icons/fa';
+import { FaMobileAlt, FaLaptop, FaTabletAlt, FaHeadphones, FaClock, FaRegClock } from 'react-icons/fa';
 import { Category } from '@/types';
 
+/**
+ * Electronics categories exposed by the live product API (DummyJSON). The
+ * sidebar and navigation are driven by these API categories so that filtering
+ * against the catalogue returns real results. `count` is a live-fetched value;
+ * `getCategoryCounts()` in the product API layer supplies the current total.
+ */
 export const categories: Category[] = [
   {
-    _id: 'cat-gadget',
-    name: 'Gadget Accessories',
-    slug: 'gadget-accessories',
-    icon: FaHeadphones,
+    _id: 'cat-smartphones',
+    name: 'Smartphones',
+    slug: 'smartphones',
+    icon: FaMobileAlt,
     pastel: '#DBEAFE',
-    count: 12,
+    count: 0,
   },
   {
-    _id: 'cat-kitchen',
-    name: 'Kitchen Appliances',
-    slug: 'kitchen-appliances',
-    icon: FaUtensils,
+    _id: 'cat-laptops',
+    name: 'Laptops',
+    slug: 'laptops',
+    icon: FaLaptop,
     pastel: '#FEE2E2',
-    count: 7,
-  },
-  {
-    _id: 'cat-tv',
-    name: 'Television',
-    slug: 'television',
-    icon: FaTv,
-    pastel: '#FCE7F3',
-    count: 6,
-  },
-  {
-    _id: 'cat-fridge',
-    name: 'Refrigerators',
-    slug: 'refrigerators',
-    icon: FaSnowflake,
-    pastel: '#E0F2FE',
-    count: 5,
-  },
-  {
-    _id: 'cat-washing',
-    name: 'Washing Machine',
-    slug: 'washing-machine',
-    icon: FaTshirt,
-    pastel: '#DCFCE7',
-    count: 5,
+    count: 0,
   },
   {
     _id: 'cat-tablets',
@@ -49,7 +31,31 @@ export const categories: Category[] = [
     slug: 'tablets',
     icon: FaTabletAlt,
     pastel: '#EDE9FE',
-    count: 5,
+    count: 0,
+  },
+  {
+    _id: 'cat-audio',
+    name: 'Audio & Accessories',
+    slug: 'mobile-accessories',
+    icon: FaHeadphones,
+    pastel: '#FCE7F3',
+    count: 0,
+  },
+  {
+    _id: 'cat-mens-watches',
+    name: "Men's Watches",
+    slug: 'mens-watches',
+    icon: FaClock,
+    pastel: '#E0F2FE',
+    count: 0,
+  },
+  {
+    _id: 'cat-womens-watches',
+    name: "Women's Watches",
+    slug: 'womens-watches',
+    icon: FaRegClock,
+    pastel: '#DCFCE7',
+    count: 0,
   },
 ];
 
