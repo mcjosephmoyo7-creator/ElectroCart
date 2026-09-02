@@ -19,44 +19,44 @@ export default function AuthPageContent({ initialMode, title, subtitle, redirect
   const [mode, setMode] = useState<AuthMode>(initialMode);
 
   const heading =
-    mode === 'register'
-      ? 'Create Your Account'
-      : mode === 'forgot'
-        ? 'Reset Your Password'
-        : title;
+  mode === 'register'
+  ? 'Create Your Account'
+  : mode === 'forgot'
+  ? 'Reset Your Password'
+  : title;
   const subheading =
-    mode === 'register'
-      ? 'Join ElectroCart and start shopping smart.'
-      : mode === 'forgot'
-        ? 'Enter your email and we will send you a reset link.'
-        : subtitle;
+  mode === 'register'
+  ? 'Join ElectroCart and start shopping smart.'
+  : mode === 'forgot'
+  ? 'Enter your email and we will send you a reset link.'
+  : subtitle;
 
   return (
-    <div className="container-custom py-12 lg:py-16">
-      <div className="max-w-md mx-auto bg-white dark:bg-navy-200 border border-lineBorder dark:border-navy-50 rounded-2xl p-6 lg:p-8 shadow-card">
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-slateText dark:text-white">{heading}</h1>
-          <p className="text-muted text-sm mt-1">{subheading}</p>
-        </div>
+  <div className="container-custom py-12 lg:py-16">
+  <div className="max-w-md mx-auto bg-white  border border-lineBorder  rounded-2xl p-6 lg:p-8 shadow-card">
+  <div className="text-center mb-6">
+  <h1 className="text-2xl font-bold text-slateText ">{heading}</h1>
+  <p className="text-muted text-sm mt-1">{subheading}</p>
+  </div>
 
-        {error && (
-          <div className="mb-4 flex items-start gap-2.5 rounded-lg bg-error/10 text-error text-sm px-3 py-2.5">
-            <FiAlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
-            <span>
-              {error === 'google_oauth_not_configured' || error === 'facebook_oauth_not_configured'
-                ? 'Social sign-in is not configured yet. Please use email to sign in.'
-                : 'Something went wrong while signing you in. Please try again.'}
-            </span>
-          </div>
-        )}
+  {error && (
+  <div className="mb-4 flex items-start gap-2.5 rounded-lg bg-error/10 text-error text-sm px-3 py-2.5">
+  <FiAlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
+  <span>
+  {error === 'google_oauth_not_configured' || error === 'facebook_oauth_not_configured'
+  ? 'Social sign-in is not configured yet. Please use email to sign in.'
+  : 'Something went wrong while signing you in. Please try again.'}
+  </span>
+  </div>
+  )}
 
-        <AuthForm
-          mode={mode}
-          onModeChange={setMode}
-          redirectPath={redirect}
-          onAuthenticated={() => router.push(redirect)}
-        />
-      </div>
-    </div>
+  <AuthForm
+  mode={mode}
+  onModeChange={setMode}
+  redirectPath={redirect}
+  onAuthenticated={() => router.push(redirect)}
+  />
+  </div>
+  </div>
   );
 }

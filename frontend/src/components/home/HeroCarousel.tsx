@@ -27,7 +27,7 @@ const slides: Slide[] = [
     subtext: 'Upgrade your home with the latest tech at unbeatable prices.',
     cta: 'Shop Now',
     href: '/shop',
-    gradient: 'from-navy-300 via-primary-800 to-primary',
+    gradient: 'from-slate-100 via-sky-50 to-white',
     icon: <HiOutlineSparkles className="w-7 h-7" />,
     imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: 'Smart TV',
@@ -40,7 +40,7 @@ const slides: Slide[] = [
     subtext: 'Enjoy free doorstep delivery on every order above $100 across the USA.',
     cta: 'Start Shopping',
     href: '/shop',
-    gradient: 'from-navy-300 via-navy to-accent-dark',
+    gradient: 'from-slate-100 via-white to-sky-50',
     icon: <HiOutlineTruck className="w-7 h-7" />,
     imageUrl: 'https://images.unsplash.com/photo-1586528116493-da8b8f7f0b1d?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: 'Free Delivery',
@@ -53,7 +53,7 @@ const slides: Slide[] = [
     subtext: 'Not satisfied? Return any product within 30 days for a full refund.',
     cta: 'Learn More',
     href: '/shop',
-    gradient: 'from-navy-300 via-primary-900 to-primary-dark',
+    gradient: 'from-slate-100 via-cyan-50 to-white',
     icon: <HiOutlineShieldCheck className="w-7 h-7" />,
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=480&h=480&q=85',
     productLabel: '30-Day Guarantee',
@@ -92,32 +92,32 @@ export default function HeroCarousel() {
               {/* Floating product image */}
               <div className="absolute right-0 top-0 bottom-0 hidden lg:flex items-center justify-center pr-24">
                 <div className="relative w-80 h-80">
-                  <div className="absolute inset-0 bg-white/10 rounded-full blur-md" />
+                  <div className="absolute inset-0 bg-slate-100/80 rounded-full blur-md" />
                   <img
                     src={slide.imageUrl}
                     alt={slide.productLabel}
-                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white/20 rotate-3 hover:rotate-0 transition-transform duration-500"
+                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white/80 rotate-3 hover:rotate-0 transition-transform duration-500"
                   />
-                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-navy text-xs font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-2">
-                    <span className="text-accent">{slide.icon}</span> {slide.productLabel}
+                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-slateText text-xs font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-2 border border-slate-200">
+                    <span className="text-primary">{slide.icon}</span> {slide.productLabel}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="relative z-20 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:max-w-[58%] min-h-[420px]">
-                <span className="inline-flex items-center gap-2 text-white bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest w-fit">
+                <span className="inline-flex items-center gap-2 text-slateText bg-white/80 border border-slate-200 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest w-fit shadow-sm">
                   {slide.eyebrow}
                 </span>
-                <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+                <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-slateText leading-[1.1]">
                   {slide.headline}{' '}
-                  <span className="text-white">{slide.highlight}</span>
+                  <span className="text-slateText">{slide.highlight}</span>
                 </h1>
-                <p className="mt-4 text-base lg:text-lg text-white/80 max-w-md leading-relaxed">{slide.subtext}</p>
+                <p className="mt-4 text-base lg:text-lg text-slateText/70 max-w-md leading-relaxed">{slide.subtext}</p>
                 <div className="mt-8">
                   <Link
                     href={slide.href}
-                    className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white px-7 py-3.5 rounded-lg font-semibold shadow-lg shadow-black/10 transition-all hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold shadow-lg shadow-primary/10 transition-all hover:scale-105"
                   >
                     {slide.cta} <HiOutlineArrowRight className="w-5 h-5" />
                   </Link>
